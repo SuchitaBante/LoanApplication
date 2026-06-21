@@ -1,0 +1,77 @@
+<div class="container">
+    <div class="row">
+        <div class="card">
+            <div class="card-body">
+                <form #loanApplicationform="ngForm" (ngSubmit)="onSubmit(loanApplicationform)">
+
+                    <div class="form-group">
+                        <label>Applicant Name*</label>
+                        <input type="text" class="form-control" name="name" ngModel #name="ngModel" required
+                            pattern="[a-zA-Z]*">
+                        <span *ngIf="name.touched && name.hasError('required')" class="text-danger">
+                            Applicant Name is required
+                        </span>
+                        
+                    </div>
+                    <br>
+
+                    <div class="form-group">
+                        <label>Email*</label>
+                        <input type="text" class="form-control" name="email" ngModel #email="ngModel" required pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,100}$">
+                        <span *ngIf="email.touched && email.hasError('required')" class="text-danger"> Email is required</span>
+                    </div>
+                    <br>
+
+                    <div class="form-group">
+                        <label>Mobile Number*</label>
+                        <input type="text" class="form-control" name="mobileNo" ngModel #mobileNo="ngModel" required
+                            pattern="^[0-9]{10}$">
+                        <span *ngIf="mobileNo.touched && mobileNo.hasError('required')" class="text-danger"> Mobile is
+                            required</span>
+                    </div>
+                    <br>
+
+                    <div class="form-group">
+                        <label>PAN Number*</label>
+                        <input type="text" class="form-control" name="panNo" ngModel #panNo="ngModel" required pattern="^[A-Z]{5}[0-9]{4}[A-Z]{1}$">
+                        <span *ngIf="panNo.touched && panNo.hasError('required')" class="text-danger"> PAN No is required</span>
+                    </div>
+                    <br>
+
+                    <div class="form-group">
+                        <label >Aadhaar Number*</label>
+                        <input type=" text" class="form-control" name="aadhaarNo" ngModel #aadhaarNo="ngModel" required pattern="^[0-9]{12}$">
+                        <span *ngIf="aadhaarNo.touched && aadhaarNo. hasError('required')" class="text-danger"> 
+                            Aadhaar Number is required
+                        </span>
+                    </div>
+                    <br>
+
+                    <div class="form-group">
+                        <label>Annual Income*</label>
+                        <input type="number" class="form-control" name="annualIncome" ngModel #annualIncome="ngModel" required>
+                        <span *ngIf="annualIncome.touched && annualIncome.hasError('required')" class="text-danger">
+                            Annual Income is required
+                        </span>
+                    </div>
+                    <br>
+
+                    <div class="form-group">
+                        <label>Loan Ammount*</label>
+                        <input type="number" class="form-control" name="loanammount" ngModel #loanammount="ngModel" required>
+                        <span *ngIf="loanammount.invalid && loanammount.touched" class="text-danger">
+                            Loan Ammount is required
+                        </span>
+                    </div>
+                    <br>
+<button mat-raised-button color="primary"  type="submit" class="w-100">
+                Register
+            </button>
+
+                    
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
